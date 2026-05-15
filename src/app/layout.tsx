@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { IntroProvider } from "@/components/providers/IntroProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,10 +31,12 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-black text-white antialiased`}
       >
-        <SmoothScrollProvider>
-          <CustomCursor />
-          {children}
-        </SmoothScrollProvider>
+        <IntroProvider>
+          <SmoothScrollProvider>
+            <CustomCursor />
+            {children}
+          </SmoothScrollProvider>
+        </IntroProvider>
       </body>
     </html>
   );
