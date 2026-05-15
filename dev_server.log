@@ -6,12 +6,8 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1765ms
- ○ Compiling / ...
- ✓ Compiled / in 8.6s (1324 modules)
- GET / 200 in 9474ms
- ✓ Compiled in 868ms (647 modules)
- GET / 200 in 42ms
- ✓ Compiled in 3.4s (1343 modules)
- ✓ Compiled in 514ms (1345 modules)
- GET / 200 in 439ms
+ ✓ Ready in 1813ms
+ ○ Compiling /projects/noctis-cafe ...
+ ✓ Compiled /projects/noctis-cafe in 7.9s (1333 modules)
+ GET /projects/noctis-cafe 200 in 9206ms
+ ✓ Compiled in 1262ms (652 modules)
