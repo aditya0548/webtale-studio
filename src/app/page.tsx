@@ -6,6 +6,7 @@ import HeroSection from "@/components/hero/HeroSection";
 import IntroOverlay from "@/components/hero/IntroOverlay";
 import { useIntro } from "@/components/providers/IntroProvider";
 import AboutSection from "@/components/about/AboutSection";
+import ShowcaseSection from "@/components/showcase/ShowcaseSection";
 
 export default function Home() {
   const [showOverlay, setShowOverlay] = useState(true);
@@ -26,6 +27,7 @@ export default function Home() {
       </AnimatePresence>
       <HeroSection />
       <AboutSection />
+      <ShowcaseSection />
     </main>
   );
 }
