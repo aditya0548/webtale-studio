@@ -6,8 +6,11 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1632ms
- ○ Compiling /projects/veltrix-ai ...
- ✓ Compiled /projects/veltrix-ai in 16.8s (2480 modules)
- GET /projects/veltrix-ai 200 in 18199ms
- ✓ Compiled in 1646ms (1226 modules)
+ ✓ Ready in 1757ms
+ ○ Compiling /projects/obsidian-threads ...
+ ✓ Compiled /projects/obsidian-threads in 7.3s (1323 modules)
+ GET /projects/obsidian-threads 200 in 8169ms
+ ✓ Compiled in 848ms (647 modules)
+ GET /projects/obsidian-threads 200 in 45ms
+ ✓ Compiled in 692ms (1305 modules)
+ ✓ Compiled in 331ms (1305 modules)
