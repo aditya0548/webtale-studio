@@ -6,8 +6,8 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1813ms
- ○ Compiling /projects/noctis-cafe ...
- ✓ Compiled /projects/noctis-cafe in 7.9s (1333 modules)
- GET /projects/noctis-cafe 200 in 9206ms
- ✓ Compiled in 1262ms (652 modules)
+ ✓ Ready in 1632ms
+ ○ Compiling /projects/veltrix-ai ...
+ ✓ Compiled /projects/veltrix-ai in 16.8s (2480 modules)
+ GET /projects/veltrix-ai 200 in 18199ms
+ ✓ Compiled in 1646ms (1226 modules)
