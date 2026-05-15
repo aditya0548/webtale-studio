@@ -1,0 +1,17 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling /projects/etherea ...
+ ✓ Compiled /projects/etherea in 18.3s (2528 modules)
+ GET /projects/etherea 200 in 19401ms
+ ✓ Compiled in 1358ms (1250 modules)
+ GET /projects/etherea 200 in 63ms
+ ✓ Compiled in 1035ms (2510 modules)
+ GET /projects/etherea 200 in 385ms
+ GET /projects/etherea 200 in 41ms
