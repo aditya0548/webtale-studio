@@ -1,10 +1,10 @@
 'use client';
 
-import { useMemo, useRef, useEffect } from 'react';
+import { useMemo, useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const ParticleSystem = () => {
+const ParticleSystem = ({ inView, isMobile }: { inView: boolean; isMobile: boolean }) => {
   const pointsRef = useRef<THREE.Points>(null);
   const mouse = useRef({ x: 0, y: 0 });
 
@@ -20,7 +20,7 @@ const ParticleSystem = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const count = 1200;
+  const count = isMobile ? 200 : 600;
 
   const { positions, initialPositions } = useMemo(() => {
     const positions = new Float32Array(count * 3);
@@ -44,7 +44,7 @@ const ParticleSystem = () => {
   }, [count]);
 
   useFrame(() => {
-    if (!pointsRef.current) return;
+    if (!inView || !pointsRef.current) return;
 
     const geometry = pointsRef.current.geometry;
     const positionsAttribute = geometry.attributes.position as THREE.BufferAttribute;
@@ -93,10 +93,46 @@ const ParticleSystem = () => {
 };
 
 export default function ParticleField() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Handle resize to update particle count
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
-      <color attach="background" args={['black']} />
-      <ParticleSystem />
-    </Canvas>
+    <div ref={containerRef} className="absolute inset-0 z-0">
+      <Canvas camera={{ position: [0, 0, 5] }}>
+        <color attach="background" args={['black']} />
+        <ParticleSystem inView={inView} isMobile={isMobile} />
+      </Canvas>
+    </div>
   );
 }
