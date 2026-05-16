@@ -59,9 +59,10 @@ function Scene() {
 
       <ambientLight intensity={0.4} color="#fff8f0" />
       <spotLight color="#ffffff" intensity={6} position={[5, 8, 5]} angle={0.25} penumbra={0.4} />
-      <spotLight color="#c9a84c" intensity={4} position={[-5, 2, 4]} angle={0.35} penumbra={0.6} />
+      <spotLight color="#7d2840" intensity={5} position={[-5, 2, 4]} angle={0.35} penumbra={0.6} />
       <spotLight color="#ffffff" intensity={3} position={[0, -6, -4]} angle={0.5} penumbra={0.8} />
-      <pointLight color="#c9a84c" intensity={2} position={[2, 0, 5]} />
+      <pointLight color="#c0392b" intensity={3} position={[2, 0, 5]} />
+      <pointLight color="#7d2840" intensity={2} position={[-3, 3, -2]} />
 
       <group ref={groupRef} position={[0, 0, 0]}>
         {/* Main Body */}
@@ -96,7 +97,7 @@ function Scene() {
           <cylinderGeometry ref={capGeometryRef} args={[0.2, 0.22, 0.8, 64]} />
           <meshPhysicalMaterial
             ref={capMaterialRef}
-            color="#c9a84c"
+            color="#1a0a0e"
             metalness={1}
             roughness={0}
             reflectivity={1}
@@ -108,7 +109,7 @@ function Scene() {
           <torusGeometry ref={ringGeometryRef} args={[0.46, 0.025, 16, 64]} />
           <meshStandardMaterial
             ref={goldMaterialRef}
-            color="#c9a84c"
+            color="#7d2840"
             metalness={1}
             roughness={0}
           />
@@ -119,7 +120,7 @@ function Scene() {
           <planeGeometry ref={labelGeometryRef} args={[0.7, 1.0]} />
           <meshStandardMaterial
             ref={labelMaterialRef}
-            color="#c9a84c"
+            color="#7d2840"
             metalness={0.3}
             roughness={0.8}
             opacity={0.15}
@@ -131,7 +132,7 @@ function Scene() {
         <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
           <planeGeometry args={[10, 10]} />
           <meshStandardMaterial
-            color="#000000"
+            color="#0a0608"
             metalness={1}
             roughness={0.1}
             opacity={0.4}
@@ -152,19 +153,19 @@ function Scene() {
 
 export default function PerfumeBottle() {
   return (
-    <div id="bottle" className="relative w-full h-[60vh] md:h-[100vh] bg-black">
+    <div id="bottle" className="relative w-full h-[60vh] md:h-[100vh] bg-[#0a0608]">
       <Canvas camera={{ position: [0, 0, 5] }}>
         <Scene />
       </Canvas>
 
       <div className="absolute bottom-[48px] left-0 right-0 flex flex-col items-center pointer-events-none z-10 text-center">
-        <div className="font-inter text-[10px] tracking-[0.6em] text-[rgba(201,168,76,0.5)]">
+        <div className="font-inter text-[10px] tracking-[0.6em] text-[rgba(125,40,64,0.7)]">
           ÉTHERÉA · NO.01
         </div>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="font-inter text-[11px] text-silver/25 mt-[8px]"
+          className="font-inter text-[11px] text-[rgba(242,236,230,0.25)] mt-[8px]"
         >
           ↓ Continue
         </motion.div>

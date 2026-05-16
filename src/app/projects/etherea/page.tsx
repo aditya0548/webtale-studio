@@ -15,13 +15,18 @@ export default function EthereaPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col bg-black w-full min-h-screen text-white font-inter relative"
+      className="flex flex-col bg-[#0a0608] w-full min-h-screen text-[#f2ece6] font-inter relative"
     >
+      {/* Global Background Base Layer */}
+      <div
+        className="fixed inset-0 z-[-2] pointer-events-none bg-[#0a0608]"
+      />
+
       {/* Global Background Gradient */}
       <div
         className="fixed inset-0 z-[-1] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(125,40,64,0.08) 0%, rgba(192,57,43,0.03) 30%, transparent 60%)",
         }}
       />
 
@@ -31,7 +36,7 @@ export default function EthereaPage() {
       {/* Transition Div to prevent white flash */}
       <div
         className="w-full h-[120px]"
-        style={{ background: "linear-gradient(to bottom, #000, #000)" }}
+        style={{ background: "linear-gradient(to bottom, #0a0608, #0a0608)" }}
       />
 
       <PerfumeBottle />
