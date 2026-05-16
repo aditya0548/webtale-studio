@@ -6,10 +6,11 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1788ms
- ○ Compiling /projects/etherea ...
- ✓ Compiled /projects/etherea in 17.4s (2911 modules)
- GET /projects/etherea 200 in 18765ms
- ✓ Compiled in 1620ms (1252 modules)
- GET /projects/etherea 200 in 62ms
- GET /projects/etherea 200 in 36ms
+ ✓ Ready in 1735ms
+ ○ Compiling / ...
+ ✓ Compiled / in 15.1s (1797 modules)
+ GET / 200 in 16354ms
+ ✓ Compiled in 1358ms (694 modules)
+ GET / 200 in 173ms
+ GET / 200 in 56ms
+ GET / 200 in 55ms

@@ -7,6 +7,7 @@ import { IntroProvider } from "@/components/providers/IntroProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { MotionConfig } from "framer-motion";
+import PageTransitionWrapper from "@/components/layout/PageTransitionWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,7 +40,9 @@ export default function RootLayout({
             <SmoothScrollProvider>
               <CustomCursor />
               <Navbar />
-              {children}
+              <PageTransitionWrapper>
+                {children}
+              </PageTransitionWrapper>
               <Footer />
             </SmoothScrollProvider>
           </IntroProvider>

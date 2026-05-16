@@ -18,6 +18,15 @@ export default function SmoothScrollProvider({
   const reqIdRef = useRef<number>();
 
   useEffect(() => {
+    const isTouchDevice =
+      typeof window !== "undefined" &&
+      (navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(any-pointer: coarse)").matches);
+
+    if (isTouchDevice) {
+      return;
+    }
+
     const lenisInstance = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
