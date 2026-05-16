@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ScrollLine from "@/components/projects/etherea/ScrollLine";
 import EthereaNav from "@/components/projects/etherea/EthereaNav";
 import EthereaHero from "@/components/projects/etherea/EthereaHero";
 import PerfumeBottle from "@/components/projects/etherea/PerfumeBottle";
@@ -30,6 +31,7 @@ export default function EthereaPage() {
         }}
       />
 
+      <ScrollLine />
       <EthereaNav />
       <EthereaHero />
 
