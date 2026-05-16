@@ -55,26 +55,26 @@ function Scene() {
 
   return (
     <>
-      <Environment preset="studio" />
+      <Environment preset="city" />
 
-      <ambientLight intensity={0.15} />
-      <spotLight color="#ffffff" intensity={4} position={[4, 6, 4]} angle={0.3} penumbra={0.5} castShadow={false} />
-      <spotLight color="#c9a84c" intensity={3} position={[-4, -2, 3]} angle={0.4} penumbra={0.8} />
-      <pointLight color="#ffffff" intensity={1.5} position={[0, 4, -3]} />
-      <pointLight color="#c9a84c" intensity={0.8} position={[0, -4, 2]} />
+      <ambientLight intensity={0.4} color="#fff8f0" />
+      <spotLight color="#ffffff" intensity={6} position={[5, 8, 5]} angle={0.25} penumbra={0.4} />
+      <spotLight color="#c9a84c" intensity={4} position={[-5, 2, 4]} angle={0.35} penumbra={0.6} />
+      <spotLight color="#ffffff" intensity={3} position={[0, -6, -4]} angle={0.5} penumbra={0.8} />
+      <pointLight color="#c9a84c" intensity={2} position={[2, 0, 5]} />
 
-      <group ref={groupRef}>
+      <group ref={groupRef} position={[0, 0, 0]}>
         {/* Main Body */}
         <mesh position={[0, 0, 0]}>
           <cylinderGeometry ref={bottleGeometryRef} args={[0.45, 0.65, 2.6, 64]} />
           <meshPhysicalMaterial
             ref={bodyMaterialRef}
-            color="#0d0d0d"
-            metalness={0.95}
-            roughness={0.02}
-            reflectivity={1}
+            color="#080808"
+            metalness={1}
+            roughness={0.0}
             clearcoat={1}
-            clearcoatRoughness={0.05}
+            clearcoatRoughness={0}
+            envMapIntensity={2}
           />
         </mesh>
 
@@ -126,6 +126,18 @@ function Scene() {
             transparent={true}
           />
         </mesh>
+
+        {/* Ground Reflection */}
+        <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[10, 10]} />
+          <meshStandardMaterial
+            color="#000000"
+            metalness={1}
+            roughness={0.1}
+            opacity={0.4}
+            transparent={true}
+          />
+        </mesh>
       </group>
 
       <OrbitControls
@@ -141,7 +153,7 @@ function Scene() {
 export default function PerfumeBottle() {
   return (
     <div id="bottle" className="relative w-full h-[60vh] md:h-[100vh] bg-black">
-      <Canvas>
+      <Canvas camera={{ position: [0, 0, 5] }}>
         <Scene />
       </Canvas>
 

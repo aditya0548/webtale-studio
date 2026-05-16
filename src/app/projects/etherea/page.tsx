@@ -15,10 +15,25 @@ export default function EthereaPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col bg-black w-full min-h-screen text-white font-inter"
+      className="flex flex-col bg-black w-full min-h-screen text-white font-inter relative"
     >
+      {/* Global Background Gradient */}
+      <div
+        className="fixed inset-0 z-[-1] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 60%)",
+        }}
+      />
+
       <EthereaNav />
       <EthereaHero />
+
+      {/* Transition Div to prevent white flash */}
+      <div
+        className="w-full h-[120px]"
+        style={{ background: "linear-gradient(to bottom, #000, #000)" }}
+      />
+
       <PerfumeBottle />
       <ScentNarrative />
       <ImmersiveShowcase />
