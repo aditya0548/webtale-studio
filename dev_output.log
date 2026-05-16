@@ -2,12 +2,18 @@
 > my-app@0.1.0 dev
 > next dev
 
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+ ⚠ Port 3002 is in use, trying 3003 instead.
+ ⚠ Port 3003 is in use, trying 3004 instead.
   ▲ Next.js 14.2.35
-  - Local:        http://localhost:3000
+  - Local:        http://localhost:3004
 
  ✓ Starting...
- ✓ Ready in 1759ms
- ○ Compiling /projects/[slug] ...
- ✓ Compiled /projects/[slug] in 9.5s (1377 modules)
- ✓ Compiled in 645ms (669 modules)
- GET /projects/etherea 200 in 11236ms
+ ✓ Ready in 1894ms
+ ○ Compiling /projects/etherea ...
+ ✓ Compiled /projects/etherea in 21.3s (2955 modules)
+ GET /projects/etherea 200 in 22900ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1541643600914-78b084683702?w=1920&q=80 404
+ ✓ Compiled in 1847ms (1273 modules)
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1590736969596-1b70b1b7eda2?w=1920&q=80 404
