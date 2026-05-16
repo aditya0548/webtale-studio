@@ -74,6 +74,7 @@ export default function Navbar() {
         <button
           className="md:hidden flex flex-col space-y-[4px] p-2 z-[110] relative"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
           <span className={`block w-6 h-[1px] bg-white/60 transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-[5px]" : ""}`}></span>
           <span className={`block w-6 h-[1px] bg-white/60 transition-opacity duration-300 ${isOpen ? "opacity-0" : ""}`}></span>

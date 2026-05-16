@@ -6,6 +6,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import { IntroProvider } from "@/components/providers/IntroProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { MotionConfig } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,14 +34,16 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-black text-white antialiased`}
       >
-        <IntroProvider>
-          <SmoothScrollProvider>
-            <CustomCursor />
-            <Navbar />
-            {children}
-            <Footer />
-          </SmoothScrollProvider>
-        </IntroProvider>
+        <MotionConfig reducedMotion="user">
+          <IntroProvider>
+            <SmoothScrollProvider>
+              <CustomCursor />
+              <Navbar />
+              {children}
+              <Footer />
+            </SmoothScrollProvider>
+          </IntroProvider>
+        </MotionConfig>
       </body>
     </html>
   );
