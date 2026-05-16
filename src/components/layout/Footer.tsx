@@ -2,10 +2,16 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 export default function Footer() {
+  const pathname = usePathname();
   const marqueeText = "WEBTALE STUDIO · CINEMATIC EXPERIENCES · ADITYA · ".repeat(5);
+
+  if (pathname?.startsWith("/projects/etherea")) {
+    return null;
+  }
 
   return (
     <footer className="w-full bg-black border-t border-[rgba(255,255,255,0.06)] flex flex-col">
