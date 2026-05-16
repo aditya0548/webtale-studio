@@ -32,11 +32,11 @@ export default function EthereaNav() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-[100] px-[48px] py-[24px] flex justify-between items-center transition-all duration-300 ${
-        isScrolled ? "bg-[rgba(0,0,0,0.7)] backdrop-blur-md" : "bg-transparent"
+        isScrolled ? "bg-[rgba(10,6,8,0.85)] backdrop-blur-md" : "bg-transparent"
       }`}
     >
       {/* LEFT */}
-      <div className="font-cormorant text-[18px] italic tracking-[0.3em] text-white">
+      <div className="font-cormorant text-[18px] italic tracking-[0.3em] text-[#f2ece6]">
         ÉTHERÉA
       </div>
 
@@ -45,13 +45,13 @@ export default function EthereaNav() {
         <a
           href="#bottle"
           onClick={handleScrollToBottle}
-          className="font-inter text-[11px] tracking-[0.3em] text-silver/60 hover:text-white transition-colors duration-200 cursor-pointer"
+          className="font-inter text-[11px] tracking-[0.3em] text-[rgba(242,236,230,0.5)] hover:text-[#f2ece6] transition-colors duration-200 cursor-pointer"
         >
           Discover
         </a>
         <Link
           href="/"
-          className="font-inter text-[11px] tracking-[0.3em] text-silver/40 hover:text-white transition-colors duration-200"
+          className="font-inter text-[11px] tracking-[0.3em] text-[rgba(242,236,230,0.35)] hover:text-[#f2ece6] transition-colors duration-200"
         >
           ← Studio
         </Link>
