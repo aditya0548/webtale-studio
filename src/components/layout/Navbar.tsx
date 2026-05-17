@@ -29,7 +29,10 @@ export default function Navbar() {
     ["blur(0px)", "blur(20px)"]
   );
 
-  if (pathname?.startsWith("/projects/etherea")) {
+  if (
+    pathname?.startsWith("/projects/etherea") ||
+    pathname?.startsWith("/projects/noctis-cafe")
+  ) {
     return null;
   }
 
