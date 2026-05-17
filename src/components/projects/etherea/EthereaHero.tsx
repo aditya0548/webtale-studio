@@ -7,13 +7,14 @@ export default function EthereaHero() {
   return (
     <section className="relative w-full h-[100vh] bg-[#0a0608] overflow-hidden flex flex-col items-center justify-center">
       {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=1920&q=80"
           alt="Dark perfume bottle atmospheric"
           fill
           sizes="100vw"
-          className="object-cover opacity-25"
+          className="object-cover opacity-25 select-none text-transparent"
+          aria-hidden="true"
           priority
         />
         <div className="absolute inset-0 bg-[rgba(10,6,8,0.65)]" />
@@ -45,9 +46,9 @@ export default function EthereaHero() {
       />
 
       {/* Center Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-[24px]">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-[24px]">
         {/* Small label */}
-        <div className="font-inter text-[12px] tracking-[0.6em] text-[#7d2840] mb-[32px] opacity-100">
+        <div className="w-full text-center font-inter text-[12px] tracking-[0.6em] text-[#7d2840] mb-[32px] opacity-100">
           EAU DE PARFUM
         </div>
 

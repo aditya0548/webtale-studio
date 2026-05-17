@@ -21,11 +21,11 @@ export default function EthereaNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScrollToBottle = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleDiscover = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById("bottle");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const target = document.getElementById("bottle");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -43,8 +43,8 @@ export default function EthereaNav() {
       {/* RIGHT */}
       <div className="flex gap-[32px] items-center">
         <a
-          href="#bottle"
-          onClick={handleScrollToBottle}
+          href="#"
+          onClick={handleDiscover}
           className="font-inter text-[11px] tracking-[0.3em] text-[rgba(242,236,230,0.5)] hover:text-[#f2ece6] transition-colors duration-200 cursor-pointer"
         >
           Discover

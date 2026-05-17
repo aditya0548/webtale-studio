@@ -27,9 +27,12 @@ export default function SmoothScrollProvider({
       return;
     }
 
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
     const lenisInstance = new Lenis({
-      lerp: 0.08,
-      smoothWheel: true,
+      lerp: isMac ? 0.15 : 0.08,
+      smoothWheel: !isMac,
+      syncTouch: false
     });
 
     setLenis(lenisInstance);
